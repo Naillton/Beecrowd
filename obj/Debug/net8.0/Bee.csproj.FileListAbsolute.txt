@@ -1,0 +1,14 @@
+C:\Users\FG Tecnomania\beecrowd\Bee\bin\Debug\net8.0\Bee.exe
+C:\Users\FG Tecnomania\beecrowd\Bee\bin\Debug\net8.0\Bee.deps.json
+C:\Users\FG Tecnomania\beecrowd\Bee\bin\Debug\net8.0\Bee.runtimeconfig.json
+C:\Users\FG Tecnomania\beecrowd\Bee\bin\Debug\net8.0\Bee.dll
+C:\Users\FG Tecnomania\beecrowd\Bee\bin\Debug\net8.0\Bee.pdb
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.AssemblyInfoInputs.cache
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.AssemblyInfo.cs
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.csproj.CoreCompileInputs.cache
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.dll
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\refint\Bee.dll
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.pdb
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.genruntimeconfig.cache
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\ref\Bee.dll
