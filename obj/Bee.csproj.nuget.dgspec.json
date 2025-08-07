@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj": {}
+    "c:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj": {
+    "c:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj",
+        "projectUniqueName": "c:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj",
         "projectName": "Bee",
-        "projectPath": "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj",
+        "projectPath": "c:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj",
         "packagesPath": "C:\\Users\\FG Tecnomania\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\obj\\",
+        "outputPath": "c:\\Users\\FG Tecnomania\\beecrowd\\Bee\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\FG Tecnomania\\AppData\\Roaming\\NuGet\\NuGet.Config"
