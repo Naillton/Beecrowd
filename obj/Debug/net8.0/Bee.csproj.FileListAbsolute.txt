@@ -7,6 +7,7 @@ C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.GeneratedMSBuildEditorC
 C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.AssemblyInfoInputs.cache
 C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.AssemblyInfo.cs
 C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.csproj.CoreCompileInputs.cache
+C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.sourcelink.json
 C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.dll
 C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\refint\Bee.dll
 C:\Users\FG Tecnomania\beecrowd\Bee\obj\Debug\net8.0\Bee.pdb
