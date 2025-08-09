@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bee")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae8d7f1e85f98346b04b6146b688a52292f5b69e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5e94e1a864e229e0a5174df8fe8d4a99851acd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bee")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bee")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

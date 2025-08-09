@@ -16,7 +16,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Bee_2702();
+        Bee_2708();
     }
 
     // 1095 - Sequence I
@@ -3300,6 +3300,37 @@ class Program
         int faltando_salada = Math.Max(0, requisitados[2] - disponiveis[2]);
 
         Console.WriteLine(faltando_frango + faltando_bife + faltando_salada);
+    }
+
+    // Bee 2708
+    // https://www.beecrowd.com.br/judge/en/problems/view/2708
+    static void Bee_2708()
+    {
+        string? line;
+        int value = 0;
+        int jipes = 0;
+        while((line = Console.ReadLine()) != null)
+        {
+            string[] parts = line.Split();
+            if (parts[0] == "ABEND") break;
+
+            string entrada1 = parts[0];
+            int entrada2 = int.Parse(parts[1]);
+
+            if (entrada1 == "SALIDA")
+            {
+                value += entrada2;
+                jipes++;
+            }
+            else if (entrada1 == "VUELTA")
+            {
+                value -= entrada2;
+                jipes--;
+            }
+        }
+
+        Console.WriteLine(value);
+        Console.WriteLine(jipes);
     }
 
 }

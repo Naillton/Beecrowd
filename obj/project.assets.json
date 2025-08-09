@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj",
+      "projectUniqueName": "C:\\Users\\FG Tecnomania\\Beecrowd\\Bee.csproj",
       "projectName": "Bee",
-      "projectPath": "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\Bee.csproj",
+      "projectPath": "C:\\Users\\FG Tecnomania\\Beecrowd\\Bee.csproj",
       "packagesPath": "C:\\Users\\FG Tecnomania\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FG Tecnomania\\beecrowd\\Bee\\obj\\",
+      "outputPath": "C:\\Users\\FG Tecnomania\\Beecrowd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\FG Tecnomania\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
