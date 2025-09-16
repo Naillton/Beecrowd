@@ -9,6 +9,7 @@ using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml.XPath;
+using System.Text.RegularExpressions;
 
 namespace Bee;
 
@@ -16,7 +17,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Bee_2708();
+        Bee_2791();
     }
 
     // 1095 - Sequence I
@@ -3309,7 +3310,7 @@ class Program
         string? line;
         int value = 0;
         int jipes = 0;
-        while((line = Console.ReadLine()) != null)
+        while ((line = Console.ReadLine()) != null)
         {
             string[] parts = line.Split();
             if (parts[0] == "ABEND") break;
@@ -3333,4 +3334,417 @@ class Program
         Console.WriteLine(jipes);
     }
 
+    // Bee 2754
+    // https://www.beecrowd.com.br/judge/en/problems/view/2754
+    static void Bee_2754()
+    {
+        //Crie duas variáveis reais de dupla precisão;
+        //Atribua a primeira o valor 234.345 e a segunda o valor 45.698;
+        double primeiraVariavel = 234.345;
+        double segundaVariavel = 45.698;
+        //Imprima as duas variáveis com seis casas decimais;
+        Console.WriteLine($"{primeiraVariavel:F6} - {segundaVariavel:F6}");
+        //Imprima as duas variáveis sem nenhuma casa decimal;
+        Console.WriteLine($"{primeiraVariavel:F0} - {segundaVariavel:F0}");
+        //Imprima as duas variáveis com uma casa decimal;
+        Console.WriteLine($"{primeiraVariavel:F1} - {segundaVariavel:F1}");
+        //Imprima as duas variáveis com duas casas decimais;
+        Console.WriteLine($"{234.34} - {segundaVariavel:F2}");
+        //Imprima as duas variáveis com três casas decimais;
+        Console.WriteLine($"{primeiraVariavel:F3} - {segundaVariavel:F3}");
+        //Imprima as duas variáveis com notação cientifica com 'e';
+        Console.WriteLine($"{primeiraVariavel.ToString("0.000000e+00")} - {segundaVariavel.ToString("0.000000e+00")}");
+        //Imprima as duas variáveis com notação cientifica com 'E';
+        Console.WriteLine($"{primeiraVariavel.ToString("0.000000E+00")} - {segundaVariavel.ToString("0.000000E+00")}");
+        //Imprima as duas variáveis com a representação mais curta, com 'e' ou 'E' ou sem;
+        Console.WriteLine($"{primeiraVariavel:G} - {segundaVariavel:G}");
+        //Imprima as duas variáveis com a representação mais curta, com 'e' ou 'E' ou sem;
+        Console.WriteLine($"{primeiraVariavel:G} - {segundaVariavel:G}");
+    }
+
+    // Bee 2727
+    // https://www.beecrowd.com.br/judge/en/problems/view/2727
+    static void Bee_2727()
+    {
+        var alfabeto = new Dictionary<string, string>
+        {
+            {".", "a"},
+            {"..", "b"},
+            {"...", "c"},
+            {". .", "d"},
+            {".. ..", "e"},
+            {"... ...", "f"},
+            {". . .", "g"},
+            {".. .. ..", "h"},
+            {"... ... ...", "i"},
+            {". . . .", "j"},
+            {".. .. .. ..", "k"},
+            {"... ... ... ...", "l"},
+            {". . . . .", "m"},
+            {".. .. .. .. ..", "n"},
+            {"... ... ... ... ...", "o"},
+            {". . . . . .", "p"},
+            {".. .. .. .. .. ..", "q"},
+            {"... ... ... ... ... ...", "r"},
+            {". . . . . . .", "s"},
+            {".. .. .. .. .. .. ..", "t"},
+            {"... ... ... ... ... ... ...", "u"},
+            {". . . . . . . .", "v"},
+            {".. .. .. .. .. .. .. ..", "w"},
+            {"... ... ... ... ... ... ... ...", "x"},
+            {". . . . . . . . .", "y"},
+            {".. .. .. .. .. .. .. .. ..", "z"}
+        };
+
+        string? linha;
+        while ((linha = Console.ReadLine()) != null)
+        {
+            if (linha.Trim() == "") continue;
+            int n = int.Parse(linha);
+            for (int i = 0; i < n; i++)
+            {
+                string cod = Console.ReadLine();
+                if (alfabeto.ContainsKey(cod))
+                    Console.WriteLine(alfabeto[cod]);
+            }
+        }
+    }
+
+    // Bee 2756
+    // https://www.beecrowd.com.br/judge/en/problems/view/2756
+    static void Bee_2756()
+    {
+        Console.WriteLine("       A");
+        Console.WriteLine("      B B");
+        Console.WriteLine("     C   C");
+        Console.WriteLine("    D     D");
+        Console.WriteLine("   E       E");
+        Console.WriteLine("    D     D");
+        Console.WriteLine("     C   C");
+        Console.WriteLine("      B B");
+        Console.WriteLine("       A");
+    }
+
+    // Bee 2724
+    // https://www.beecrowd.com.br/judge/en/problems/view/2724
+    static void Bee_2724()
+    {
+        int cases = int.Parse(Console.ReadLine() ?? string.Empty);
+        for (int i = 0; i < cases; i++)
+        {
+            int formulas = int.Parse(Console.ReadLine() ?? string.Empty);
+            List<string> allFormulas = new List<string>();
+            for (int j = 0; j < formulas; j++)
+            {
+                string formula = Console.ReadLine() ?? string.Empty;
+                allFormulas.Add(formula);
+            }
+
+            int experiencia = int.Parse(Console.ReadLine() ?? string.Empty);
+            for (int j = 0; j < experiencia; j++)
+            {
+                string experimento = Console.ReadLine() ?? string.Empty;
+
+                bool perigoso = false;
+                foreach (var f in allFormulas)
+                {
+                    string padrao = $@"(?<![A-Za-z0-9]){Regex.Escape(f)}(?![a-z])";
+                    if (Regex.IsMatch(experimento, padrao))
+                    {
+                        perigoso = true;
+                        break;
+                    }
+                }
+
+                Console.WriteLine(perigoso ? "Abortar" : "Prossiga");
+            }
+
+            if (i != cases - 1)
+                Console.WriteLine();
+        }
+    }
+
+    // Bee 2635
+    // https://www.beecrowd.com.br/judge/en/problems/view/2635
+    static void Bee_2635()
+    {
+        string? line;
+        while ((line = Console.ReadLine()) != null)
+        {
+            int n = int.Parse(line ?? string.Empty);
+            List<string> nomes = new List<string>();
+
+            for (int i = 0; i < n; i++)
+            {
+                nomes.Add(Console.ReadLine() ?? string.Empty);
+            }
+
+            int Q = int.Parse(Console.ReadLine() ?? string.Empty);
+            for (int i = 0; i < Q; i++)
+            {
+                int count = 0;
+                int maiorPalavra = 0;
+
+                string query = Console.ReadLine() ?? string.Empty;
+
+                foreach (string nome in nomes)
+                {
+                    if (nome.StartsWith(query, StringComparison.OrdinalIgnoreCase))
+                    {
+                        count++;
+
+                        if (nome.Length > maiorPalavra)
+                        {
+                            maiorPalavra = nome.Length;
+                        }
+                    }
+                }
+
+                if (count > 0)
+                    Console.WriteLine($"{count} {maiorPalavra}");
+                else
+                    Console.WriteLine("-1");
+
+            }
+        }
+    }
+
+
+    // Bee 2663
+    // https://www.beecrowd.com.br/judge/en/problems/view/2663
+    static void Bee_2663()
+    {
+        int n = int.Parse(Console.ReadLine() ?? string.Empty);
+        int classificados = int.Parse(Console.ReadLine() ?? string.Empty);
+        List<int> notas = new List<int>();
+        int count = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int nota = int.Parse(Console.ReadLine() ?? string.Empty);
+            notas.Add(nota);
+        }
+
+        notas.Sort();
+        notas.Reverse();
+
+        int cutOff = notas[classificados - 1];
+
+        Console.WriteLine(notas.Count(nota => nota >= cutOff));
+    }
+
+    // Bee 2712
+    // https://www.beecrowd.com.br/judge/en/problems/view/2712
+    static void Bee_2712()
+    {
+        int n = int.Parse(Console.ReadLine() ?? string.Empty);
+        for (int i = 0; i < n; i++)
+        {
+            string placa = Console.ReadLine() ?? string.Empty;
+            char[] letras = placa.ToCharArray();
+
+            if (letras.Length != 8)
+            {
+                Console.WriteLine("FAILURE");
+                continue;
+            }
+
+            bool formatoValido =
+                letras[3] == '-' &&
+                char.IsUpper(letras[0]) &&
+                char.IsUpper(letras[1]) &&
+                char.IsUpper(letras[2]) &&
+                char.IsDigit(letras[4]) &&
+                char.IsDigit(letras[5]) &&
+                char.IsDigit(letras[6]) &&
+                char.IsDigit(letras[7]);
+
+            if (!formatoValido)
+            {
+                Console.WriteLine("FAILURE");
+            }
+            else
+            {
+
+                switch (letras[7])
+                {
+                    case '1':
+                    case '2':
+                        Console.WriteLine("MONDAY");
+                        break;
+                    case '3':
+                    case '4':
+                        Console.WriteLine("TUESDAY");
+                        break;
+                    case '5':
+                    case '6':
+                        Console.WriteLine("WEDNESDAY");
+                        break;
+                    case '7':
+                    case '8':
+                        Console.WriteLine("THURSDAY");
+                        break;
+                    case '9':
+                    case '0':
+                        Console.WriteLine("FRIDAY");
+                        break;
+                }
+            }
+        }
+    }
+
+    // Bee 2721
+    // https://www.beecrowd.com.br/judge/en/problems/view/2721
+    static void Bee_2721()
+    {
+        string[] renas = new string[9]
+        {
+            "Dasher", "Dancer", "Prancer", "Vixen", "Comet",
+            "Cupid", "Donner", "Blitzen", "Rudolph"
+        };
+
+        int[] numbers = Array.ConvertAll(Console.ReadLine()?.Split() ?? Array.Empty<string>(), int.Parse);
+
+        int total = numbers.Sum();
+
+        int winner = (total - 1) % 9;
+
+        Console.WriteLine(renas[winner]);
+    }
+
+
+    // Bee 2715
+    // https://www.beecrowd.com.br/judge/en/problems/view/2715
+    static void Bee_2715()
+    {
+        string? line;
+        while ((line = Console.ReadLine()) != null)
+        {
+            int n = int.Parse(line ?? string.Empty);
+            int[] numbers = Array.ConvertAll(
+            Console.ReadLine()
+                ?.Trim()
+                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                ?? Array.Empty<string>(),
+            int.Parse);
+
+            long sum = numbers.Select(x => (long)x).Sum();
+
+            long prefix = 0;
+            long minDiff = long.MaxValue;
+
+            for (int i = 0; i < n; i++)
+            {
+                prefix += numbers[i];
+                long gugu = sum - prefix;
+                long diff = Math.Abs(prefix - gugu);
+                if (diff < minDiff) minDiff = diff;
+            }
+
+            Console.WriteLine(minDiff);
+        }
+    }
+
+    // Bee 2763
+    // https://judge.beecrowd.com/pt/problems/view/2763
+    static void Bee_2763()
+    {
+        string line = Console.ReadLine() ?? string.Empty;
+        char[] delimitedChars = { '.', '-' };
+        line.Split(delimitedChars).ToList().ForEach(x =>
+        {
+            Console.WriteLine(x);
+        });
+    }
+
+    // Bee 2779
+    //  https://judge.beecrowd.com/pt/problems/view/2779
+    static void Bee_2779()
+    {
+        int quantidade = int.Parse(Console.ReadLine() ?? string.Empty);
+        int compradas = int.Parse(Console.ReadLine() ?? string.Empty);
+        List<int> listN = new List<int>();
+        for (int i = 0; i < compradas; i++)
+        {
+            int value = int.Parse(Console.ReadLine() ?? string.Empty);
+            if (!listN.Contains(value))
+            {
+                listN.Add(value);
+            }
+        }
+
+        Console.WriteLine(quantidade - listN.Count);
+    }
+
+    // Bee 2780
+    // https://judge.beecrowd.com/pt/problems/view/2780
+    static void Bee_2780()
+    {
+        int number = int.Parse(Console.ReadLine() ?? string.Empty);
+        if (number >= 0 && number <= 800)
+        {
+            Console.WriteLine(1);
+        }
+        else if (number > 800 && number <= 1400)
+        {
+            Console.WriteLine(2);
+        }
+        else
+        {
+            Console.WriteLine(3);
+        }
+    }
+
+    static void Bee_2786()
+    {
+        int L1 = int.Parse(Console.ReadLine() ?? string.Empty);
+        int L2 = int.Parse(Console.ReadLine() ?? string.Empty);
+
+        int calcL1 = (L1 * L2) + (L1 - 1) * (L2 - 1);
+        int calcL2 = 2 * (L1 - 1) + 2 * (L2 - 1);
+
+        Console.WriteLine(calcL1);
+        Console.WriteLine(calcL2);
+    }
+
+    // Bee 2783
+    // https://judge.beecrowd.com/pt/problems/view/2783
+    static void Bee_2783()
+    {
+        int[] numbers = Array.ConvertAll(Console.ReadLine()?.Trim().Split()
+        ?? Array.Empty<string>(), int.Parse);
+
+        int[] carimbadas = Array.ConvertAll(Console.ReadLine()?.Trim().Split()
+        ?? Array.Empty<string>(), int.Parse);
+
+        int[] figurinhas = Array.ConvertAll(Console.ReadLine()?.Trim().Split()
+        ?? Array.Empty<string>(), int.Parse);
+
+        HashSet<int> faltam = new HashSet<int>(carimbadas);
+
+        foreach (int fig in figurinhas)
+        {
+            if (faltam.Contains(fig))
+            {
+                faltam.Remove(fig);
+            }
+        }
+
+        Console.WriteLine(faltam.Count);
+    }
+
+    // Bee 2791
+    // https://judge.beecrowd.com/pt/problems/view/2791
+    static void Bee_2791()
+    {
+        int[] fortuneCups = Array.ConvertAll(Console.ReadLine()?.Trim().Split()
+        ?? Array.Empty<string>(), int.Parse);
+
+        for (int n = 0; n < fortuneCups.Length; n++)
+        {
+            if (fortuneCups[n] == 1)
+            {
+                Console.WriteLine(n + 1);
+            }
+        }
+    }
 }
